@@ -6,6 +6,8 @@ function App() {
 
     const [userName, setUserName] = useState("");
 
+    const [error, setError] = useState("");
+
     const bridgeLabzURL = "https://www.bridgelabz.com";
 
     function openBridgeLabzWebsite() {
@@ -16,7 +18,31 @@ function App() {
 
     function handleNameChange(event) {
 
-        setUserName(event.target.value);
+        const value = event.target.value;
+
+        setUserName(value);
+
+        const nameRegex = /^[A-Z][a-zA-Z]{2,}$/;
+
+        if (value === "") {
+
+            setError("");
+
+        }
+
+        else if (!nameRegex.test(value)) {
+
+            setError(
+                "Name should start with a Capital Letter and contain at least 3 characters."
+            );
+
+        }
+
+        else {
+
+            setError("");
+
+        }
 
     }
 
@@ -41,6 +67,14 @@ function App() {
                 value={userName}
                 onChange={handleNameChange}
             />
+
+            <br />
+
+            <span className="error">
+
+                {error}
+
+            </span>
 
         </div>
 
