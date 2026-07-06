@@ -2,11 +2,13 @@ import "./App.css";
 
 function App() {
 
+    const title = "Hello from BridgeLabz";
+
     return (
 
         <div className="App">
 
-            <h1>Hello from BridgeLabz</h1>
+            <h1>{title}</h1>
 
         </div>
 
