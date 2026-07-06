@@ -48,33 +48,35 @@ function App() {
 
     return (
 
-        <div className="App">
+        <div className="container">
 
-            <h1>Hello {userName} from BridgeLabz</h1>
+            <h1>
+                Hello {userName} from BridgeLabz
+            </h1>
 
             <img
                 src={logo}
                 alt="BridgeLabz Logo"
-                width="250"
+                className="logo"
                 onClick={openBridgeLabzWebsite}
             />
 
-            <br /><br />
+            <div className="input-section">
 
-            <input
-                type="text"
-                placeholder="Enter Your Name"
-                value={userName}
-                onChange={handleNameChange}
-            />
+                <input
+                    type="text"
+                    placeholder="Enter Your Name"
+                    value={userName}
+                    onChange={handleNameChange}
+                />
 
-            <br />
+            </div>
 
-            <span className="error">
+            <p className="error">
 
                 {error}
 
-            </span>
+            </p>
 
         </div>
 
