@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../App.css";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import "../App.css";
 
 function Home() {
 
@@ -32,9 +33,7 @@ function Home() {
 
         else if (!nameRegex.test(value)) {
 
-            setError(
-                "Name should start with a Capital Letter and contain at least 3 characters."
-            );
+            setError("Name should start with a Capital Letter and contain at least 3 characters.");
 
         }
 
@@ -50,8 +49,20 @@ function Home() {
 
         <div className="container">
 
+            <nav className="navbar">
+
+                <Link to="/">Home</Link>
+
+                <Link to="/about">About</Link>
+
+                <Link to="/contact">Contact</Link>
+
+            </nav>
+
             <h1>
+
                 Hello {userName} from BridgeLabz
+
             </h1>
 
             <img
@@ -61,7 +72,8 @@ function Home() {
                 onClick={openBridgeLabzWebsite}
             />
 
-            <br /><br />
+            <br />
+            <br />
 
             <input
                 type="text"
@@ -71,12 +83,13 @@ function Home() {
             />
 
             <br />
+            <br />
 
-            <p className="error">
+            <span className="error">
 
                 {error}
 
-            </p>
+            </span>
 
         </div>
 
